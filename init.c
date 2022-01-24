@@ -58,36 +58,48 @@ class CustomMission: MissionServer
 		EntityAI itemEnt;
 		ItemBase itemBs;
 		float rand;
+
 		player.RemoveAllItems();
 
+		int JKIndex = Math.RandomInt( 0, 4 );
 		string JacketArray[] = { "HuntingJacket_Brown", "HuntingJacket_Autumn", "HuntingJacket_Spring", "HuntingJacket_Summer" };
-		itemEnt = player.GetInventory().CreateInInventory( JacketArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( JacketArray[JKIndex] );
 
+		int PTIndex = Math.RandomInt( 0, 4 );
 		string PantsArray[] = { "HunterPants_Brown", "HunterPants_Autumn", "HunterPants_Spring", "HunterPants_Summer" };
-		itemEnt = player.GetInventory().CreateInInventory( PantsArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( PantsArray[PTIndex] );
 
+		int FCIndex = Math.RandomInt( 0, 4 );
 		string FaceCoverArray[] = { "BalaclavaMask_Beige", "BalaclavaMask_Black", "BalaclavaMask_Blackskull", "BalaclavaMask_Green" };
-		itemEnt = player.GetInventory().CreateInInventory( FaceCoverArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( FaceCoverArray[FCIndex] );
 
+		int BOIndex = Math.RandomInt( 0, 4 );
 		string BootsArray[] = { "MilitaryBoots_Beige", "MilitaryBoots_Brown", "MilitaryBoots_Black", "MilitaryBoots_Bluerock" };
-		itemEnt = player.GetInventory().CreateInInventory( BootsArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( BootsArray[BOIndex] );
 
+		int GLVIndex = Math.RandomInt( 0, 4 );
 		string GlovesArray[] = { "WorkingGloves_Beige", "WorkingGloves_Black", "WorkingGloves_Brown", "WorkingGloves_Yellow" };
-		itemEnt = player.GetInventory().CreateInInventory( GlovesArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( GlovesArray[GLVIndex] );
 
+		int HATIndex = Math.RandomInt( 0, 4 );
 		string HatArray[] = { "Ushanka_Black", "Ushanka_Green", "Ushanka_Black", "Ushanka_Blue" };
-		itemEnt = player.GetInventory().CreateInInventory( HatArray[1] );
+		itemEnt = player.GetInventory().CreateInInventory( HatArray[HATIndex] );
 
-		string VestArray[] = { "HuntingVest", "HuntingVest", "HuntingVest", "HuntingVest" };
-		itemEnt = player.GetInventory().CreateInInventory( VestArray[1] );
+		int VSTIndex = Math.RandomInt( 0, 4 );
+                string VestArray[] = { "HuntingVest", "HuntingVest", "HuntingVest", "HuntingVest" };
+                itemEnt = player.GetInventory().CreateInInventory( VestArray[VSTIndex] );
 
+		int BAGIndex = Math.RandomInt( 0, 4 );
 		string BagArray[] = { "HuntingBag", "HuntingBag", "HuntingBag", "HuntingBag" };
-		itemEnt = player.GetInventory().CreateInInventory( BagArray[1] );
+                itemEnt = player.GetInventory().CreateInInventory( BagArray[BAGIndex] );
 
-		string BeltArray[] = { "LeatherBelt_Beige", "LeatherBelt_Black", "LeatherBelt_Brown", "LeatherBelt_Natural" };
-		itemEnt = player.GetInventory().CreateInInventory( BeltArray[1] );
+		int BLTIndex = Math.RandomInt( 0, 4 );
+                string BeltArray[] = { "CivilianBelt", "CivilianBelt", "CivilianBelt", "CivilianBelt" };
+                itemEnt = player.GetInventory().CreateInInventory( BeltArray[BLTIndex] );
 
-
+		int ABIndex = Math.RandomInt( 0, 7 );
+                string ArmbandArray[] = { "Armband_Black", "Armband_Green", "Armband_Orange", "Armband_Blue", "Armband_Red", "Armband_White","Armband_Yellow" };
+                itemEnt = player.GetInventory().CreateInInventory( ArmbandArray[ABIndex] );
 
 		itemClothing = player.FindAttachmentBySlotName( "Body" );
 		if ( itemClothing )

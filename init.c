@@ -58,49 +58,42 @@ class CustomMission: MissionServer
 		EntityAI itemEnt;
 		ItemBase itemBs;
 		float rand;
+		player.RemoveAllItems();
 
-                player.RemoveAllItems();
-                string JacketArray[] = { "HuntingJacket_Brown", "HuntingJacket_Autumn", "HuntingJacket_Spring", "HuntingJacket_Summer" };
-                //int rndIndex = Math.RandomInt( 0, 4 );
-                itemEnt = player.GetInventory().CreateInInventory( JacketArray[0] );
-                itemEnt = player.GetInventory().CreateInInventory("HunterPants_Brown");
-                itemEnt = player.GetInventory().CreateInInventory("HuntingVest");
-                itemEnt = player.GetInventory().CreateInInventory("BalaclavaMask_Beige");
-                itemEnt = player.GetInventory().CreateInInventory("WorkingGloves_Brown");
-                itemEnt = player.GetInventory().CreateInInventory("MilitaryBoots_Brown");
-                itemEnt = player.GetInventory().CreateInInventory("Ushanka_Black");
-                itemEnt = player.GetInventory().CreateInInventory("HuntingBag");
-                itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Compass");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Canteen");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("SardinesCan");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("CombatKnife");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("CanOpener");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("ChernarusMap");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("MP5K");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("BandageDressing");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("PurificationTablets");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("WoodAxe");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("BakedBeansCan");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("SodaCan_Pipsi");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("SodaCan_Spite");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("TacticalBaconCan");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Matchbox");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("DuctTape");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Whetstone");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("PistolSuppressor");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("MP5k_StockBttstck");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("Binoculars");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("SewingKit");    // added items
-                itemEnt = player.GetInventory().CreateInInventory("WeaponCleaningKit");    // added items
+		string JacketArray[] = { "HuntingJacket_Brown", "HuntingJacket_Autumn", "HuntingJacket_Spring", "HuntingJacket_Summer" };
+		itemEnt = player.GetInventory().CreateInInventory( JacketArray[1] );
+
+		string PantsArray[] = { "HunterPants_Brown", "HunterPants_Autumn", "HunterPants_Spring", "HunterPants_Summer" };
+		itemEnt = player.GetInventory().CreateInInventory( PantsArray[1] );
+
+		string FaceCoverArray[] = { "BalaclavaMask_Beige", "BalaclavaMask_Black", "BalaclavaMask_Blackskull", "BalaclavaMask_Green" };
+		itemEnt = player.GetInventory().CreateInInventory( FaceCoverArray[1] );
+
+		string BootsArray[] = { "MilitaryBoots_Beige", "MilitaryBoots_Brown", "MilitaryBoots_Black", "MilitaryBoots_Bluerock" };
+		itemEnt = player.GetInventory().CreateInInventory( BootsArray[1] );
+
+		string GlovesArray[] = { "WorkingGloves_Beige", "WorkingGloves_Black", "WorkingGloves_Brown", "WorkingGloves_Yellow" };
+		itemEnt = player.GetInventory().CreateInInventory( GlovesArray[1] );
+
+		string HatArray[] = { "Ushanka_Black", "Ushanka_Green", "Ushanka_Black", "Ushanka_Blue" };
+		itemEnt = player.GetInventory().CreateInInventory( HatArray[1] );
+
+		string VestArray[] = { "HuntingVest", "HuntingVest", "HuntingVest", "HuntingVest" };
+		itemEnt = player.GetInventory().CreateInInventory( VestArray[1] );
+
+		string BagArray[] = { "HuntingBag", "HuntingBag", "HuntingBag", "HuntingBag" };
+		itemEnt = player.GetInventory().CreateInInventory( BagArray[1] );
+
+		string BeltArray[] = { "LeatherBelt_Beige", "LeatherBelt_Black", "LeatherBelt_Brown", "LeatherBelt_Natural" };
+		itemEnt = player.GetInventory().CreateInInventory( BeltArray[1] );
+
+
 
 		itemClothing = player.FindAttachmentBySlotName( "Body" );
 		if ( itemClothing )
 		{
-			SetRandomHealth( itemClothing );
-			
+
+
 			itemEnt = itemClothing.GetInventory().CreateInInventory( "BandageDressing" );
 			if ( Class.CastTo( itemBs, itemEnt ) )
 				itemBs.SetQuantity( 2 );
@@ -108,7 +101,7 @@ class CustomMission: MissionServer
 			string chemlightArray[] = { "Chemlight_White", "Chemlight_Yellow", "Chemlight_Green", "Chemlight_Red" };
 			int rndIndex = Math.RandomInt( 0, 4 );
 			itemEnt = itemClothing.GetInventory().CreateInInventory( chemlightArray[rndIndex] );
-			SetRandomHealth( itemEnt );
+
 
 			rand = Math.RandomFloatInclusive( 0.0, 1.0 );
 			if ( rand < 0.35 )
@@ -120,12 +113,52 @@ class CustomMission: MissionServer
 
 			SetRandomHealth( itemEnt );
 		}
-		
+
 		itemClothing = player.FindAttachmentBySlotName( "Legs" );
 		if ( itemClothing )
-			SetRandomHealth( itemClothing );
-		
+
 		itemClothing = player.FindAttachmentBySlotName( "Feet" );
+
+		itemEnt = player.GetInventory().CreateInInventory("Compass");
+		itemEnt = player.GetInventory().CreateInInventory("ChernarusMap");
+		itemEnt = player.GetInventory().CreateInInventory("Headtorch_Black");
+
+		itemEnt = player.GetInventory().CreateInInventory("CombatKnife");
+		itemEnt = player.GetInventory().CreateInInventory("Matchbox");
+		itemEnt = player.GetInventory().CreateInInventory("Battery9V");
+		itemEnt = player.GetInventory().CreateInInventory("Battery9V");
+		itemEnt = player.GetInventory().CreateInInventory("DuctTape");
+		itemEnt = player.GetInventory().CreateInInventory("Whetstone");
+		itemEnt = player.GetInventory().CreateInInventory("Canteen");
+		itemEnt = player.GetInventory().CreateInInventory("CanOpener");
+		itemEnt = player.GetInventory().CreateInInventory("WoodAxe");
+		itemEnt = player.GetInventory().CreateInInventory("SewingKit");
+		itemEnt = player.GetInventory().CreateInInventory("WeaponCleaningKit");
+
+		itemEnt = player.GetInventory().CreateInInventory("BandageDressing");
+		itemEnt = player.GetInventory().CreateInInventory("PurificationTablets");
+
+		itemEnt = player.GetInventory().CreateInInventory("SardinesCan");
+		itemEnt = player.GetInventory().CreateInInventory("BakedBeansCan");
+		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Pipsi");
+		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Spite");
+		itemEnt = player.GetInventory().CreateInInventory("TacticalBaconCan");
+
+		itemEnt = player.GetInventory().CreateInInventory("MP5K");
+		itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");
+		itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");
+		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
+		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
+		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
+		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
+		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
+		itemEnt = player.GetInventory().CreateInInventory("PistolSuppressor");
+		itemEnt = player.GetInventory().CreateInInventory("MP5k_StockBttstck");
+		itemEnt = player.GetInventory().CreateInInventory("MP5_RailHndgrd");
+		itemEnt = player.GetInventory().CreateInInventory("ACOGOptic");
+
+
+
 	}
 };
 

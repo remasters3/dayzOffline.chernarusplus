@@ -127,7 +127,7 @@ class CustomMission: MissionServer
 		}
 
 		itemClothing = player.FindAttachmentBySlotName( "Legs" );
-		if ( itemClothing )
+		//if ( itemClothing )
 
 		itemClothing = player.FindAttachmentBySlotName( "Feet" );
 
@@ -156,21 +156,36 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Spite");
 		itemEnt = player.GetInventory().CreateInInventory("TacticalBaconCan");
 
-		itemEnt = player.GetInventory().CreateInInventory("MP5K");
-		itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");
-		itemEnt = player.GetInventory().CreateInInventory("Mag_MP5_30Rnd");
-		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
-		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
-		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
-		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
-		itemEnt = player.GetInventory().CreateInInventory("AmmoBox_9x19_25rnd");
-		itemEnt = player.GetInventory().CreateInInventory("PistolSuppressor");
-		itemEnt = player.GetInventory().CreateInInventory("MP5k_StockBttstck");
-		itemEnt = player.GetInventory().CreateInInventory("MP5_RailHndgrd");
-		itemEnt = player.GetInventory().CreateInInventory("ACOGOptic");
-
-
-
+        array<string> MPFIVEArray = { "MP5K", "Mag_MP5_30Rnd", "Mag_MP5_30Rnd", "AmmoBox_9x19_25rnd", "AmmoBox_9x19_25rnd","AmmoBox_9x19_25rnd","PistolSuppressor","MP5k_StockBttstck","MP5_RailHndgrd","ACOGOptic" };
+        array<string> UMPArray = { "UMP45", "Mag_UMP_25Rnd", "Mag_UMP_25Rnd", "AmmoBox_45ACP_25rnd", "AmmoBox_45ACP_25rnd","AmmoBox_45ACP_25rnd","PistolSuppressor","ACOGOptic" };
+        array<string> CRSOArray = { "CZ61", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd","Mag_CZ61_20Rnd","PistolSuppressor" };
+        
+        int gunz = Math.RandomInt( 0, 3 );
+        //int gunz = 2;
+        if ( gunz == 1 )
+        {
+            foreach(int i, string j: UMPArray)
+            {
+                itemEnt = player.GetInventory().CreateInInventory( UMPArray[i] );
+            }
+        }
+        else if ( gunz == 2 )
+        {
+            foreach(int k, string l: MPFIVEArray)
+            {
+                itemEnt = player.GetInventory().CreateInInventory( MPFIVEArray[k] );
+            }
+        }
+        else 
+        {
+            foreach(int a, string b: CRSOArray)
+            {
+                itemEnt = player.GetInventory().CreateInInventory( CRSOArray[a] );
+            }
+        }
+        
+        
+        
 	}
 };
 

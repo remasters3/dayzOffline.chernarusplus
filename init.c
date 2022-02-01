@@ -62,11 +62,11 @@ class CustomMission: MissionServer
 		player.RemoveAllItems();
 
 		int JKIndex = Math.RandomInt( 0, 4 );
-		string JacketArray[] = { "HuntingJacket_Brown", "HuntingJacket_Autumn", "HuntingJacket_Spring", "HuntingJacket_Summer" };
+		string JacketArray[] = { "HikingJacket_Black", "HikingJacket_Blue", "HikingJacket_Green", "HikingJacket_Red" };
 		itemEnt = player.GetInventory().CreateInInventory( JacketArray[JKIndex] );
 
 		int PTIndex = Math.RandomInt( 0, 4 );
-		string PantsArray[] = { "HunterPants_Brown", "HunterPants_Autumn", "HunterPants_Spring", "HunterPants_Summer" };
+		string PantsArray[] = { "CargoPants_Beige", "CargoPants_Black", "CargoPants_Green", "CargoPants_Grey" };
 		itemEnt = player.GetInventory().CreateInInventory( PantsArray[PTIndex] );
 
 		int FCIndex = Math.RandomInt( 0, 4 );
@@ -74,7 +74,7 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory( FaceCoverArray[FCIndex] );
 
 		int BOIndex = Math.RandomInt( 0, 4 );
-		string BootsArray[] = { "MilitaryBoots_Beige", "MilitaryBoots_Brown", "MilitaryBoots_Black", "MilitaryBoots_Bluerock" };
+		string BootsArray[] = { "HikingBootsLow_Beige", "HikingBootsLow_Black", "HikingBootsLow_Blue", "HikingBootsLow_Grey" };
 		itemEnt = player.GetInventory().CreateInInventory( BootsArray[BOIndex] );
 
 		int GLVIndex = Math.RandomInt( 0, 4 );
@@ -82,15 +82,15 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory( GlovesArray[GLVIndex] );
 
 		int HATIndex = Math.RandomInt( 0, 4 );
-		string HatArray[] = { "Ushanka_Black", "Ushanka_Green", "Ushanka_Black", "Ushanka_Blue" };
+		string HatArray[] = { "RadarCap_Black", "RadarCap_Blue", "RadarCap_Brown", "RadarCap_Green" };
 		itemEnt = player.GetInventory().CreateInInventory( HatArray[HATIndex] );
 
 		int VSTIndex = Math.RandomInt( 0, 4 );
-                string VestArray[] = { "HuntingVest", "HuntingVest", "HuntingVest", "HuntingVest" };
+                string VestArray[] = { "PressVest_Blue", "PressVest_LightBlue", "PressVest_Blue", "PressVest_LightBlue" };
                 itemEnt = player.GetInventory().CreateInInventory( VestArray[VSTIndex] );
 
 		int BAGIndex = Math.RandomInt( 0, 4 );
-		string BagArray[] = { "HuntingBag", "HuntingBag", "HuntingBag", "HuntingBag" };
+		string BagArray[] = { "MountainBag_Blue", "MountainBag_Green", "MountainBag_Orange", "MountainBag_Red" };
                 itemEnt = player.GetInventory().CreateInInventory( BagArray[BAGIndex] );
 
 		int BLTIndex = Math.RandomInt( 0, 4 );
@@ -141,7 +141,6 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory("Battery9V");
 		itemEnt = player.GetInventory().CreateInInventory("DuctTape");
 		itemEnt = player.GetInventory().CreateInInventory("Whetstone");
-		itemEnt = player.GetInventory().CreateInInventory("Canteen");
 		itemEnt = player.GetInventory().CreateInInventory("CanOpener");
 		itemEnt = player.GetInventory().CreateInInventory("WoodAxe");
 		itemEnt = player.GetInventory().CreateInInventory("SewingKit");
@@ -155,6 +154,17 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Pipsi");
 		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Spite");
 		itemEnt = player.GetInventory().CreateInInventory("TacticalBaconCan");
+        
+        itemEnt = player.GetInventory().CreateInInventory("CanisterGasoline");
+        // itemEnt = player.GetInventory().CreateInInventory("Pliers");
+        // itemEnt = player.GetInventory().CreateInInventory("NailBox");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        
 
         array<string> MPFIVEArray = { "MP5K", "Mag_MP5_30Rnd", "Mag_MP5_30Rnd", "AmmoBox_9x19_25rnd", "AmmoBox_9x19_25rnd","AmmoBox_9x19_25rnd","PistolSuppressor","MP5k_StockBttstck","MP5_RailHndgrd","ACOGOptic" };
         array<string> UMPArray = { "UMP45", "Mag_UMP_25Rnd", "Mag_UMP_25Rnd", "AmmoBox_45ACP_25rnd", "AmmoBox_45ACP_25rnd","AmmoBox_45ACP_25rnd","PistolSuppressor","ACOGOptic" };

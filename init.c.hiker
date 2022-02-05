@@ -155,72 +155,47 @@ class CustomMission: MissionServer
 		itemEnt = player.GetInventory().CreateInInventory("SodaCan_Spite");
 		itemEnt = player.GetInventory().CreateInInventory("TacticalBaconCan");
         
-        // itemEnt = player.GetInventory().CreateInInventory("CanisterGasoline");
+        itemEnt = player.GetInventory().CreateInInventory("CanisterGasoline");
         // itemEnt = player.GetInventory().CreateInInventory("Pliers");
         // itemEnt = player.GetInventory().CreateInInventory("NailBox");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
-        // itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
+        itemEnt = player.GetInventory().CreateInInventory("Canteen");
         
 
         array<string> MPFIVEArray = { "MP5K", "Mag_MP5_30Rnd", "Mag_MP5_30Rnd", "AmmoBox_9x19_25rnd", "AmmoBox_9x19_25rnd","AmmoBox_9x19_25rnd","PistolSuppressor","MP5k_StockBttstck","MP5_RailHndgrd","ACOGOptic" };
         array<string> UMPArray = { "UMP45", "Mag_UMP_25Rnd", "Mag_UMP_25Rnd", "AmmoBox_45ACP_25rnd", "AmmoBox_45ACP_25rnd","AmmoBox_45ACP_25rnd","PistolSuppressor","ACOGOptic" };
-        array<string> CRSOArray = { "CZ61", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd","Mag_CZ61_20Rnd","PistolSuppressor" };       
-        array<string> FALArray = { "FAL", "Fal_OeBttstck", "Mag_FAL_20Rnd", "Mag_FAL_20Rnd", "Mag_FAL_20Rnd","Mag_FAL_20Rnd","ACOGOptic_6x"};
-        array<string> SKSArray = { "SKS", "AmmoBox_762x39_20Rnd", "AmmoBox_762x39_20Rnd", "AmmoBox_762x39_20Rnd", "AmmoBox_762x39_20Rnd","PUScopeOptic" };
-        array<string> MFOURArray = { "M4A1", "M4_MPHndgrd", "M4_OEBttstck", "Mag_CMAG_30Rnd", "Mag_CMAG_30Rnd", "Mag_CMAG_30Rnd","Mag_CMAG_30Rnd","ACOGOptic" };
-        array<string> AKMArray = { "AKM", "AK_PlasticBttstck", "AK_PlasticHndgrd", "Mag_AKM_30Rnd", "Mag_AKM_30Rnd", "Mag_AKM_30Rnd","Mag_AKM_30Rnd","PSO11Optic" };
-        array<string> FAMASArray = { "FAMAS", "Mag_FAMAS_25Rnd", "Mag_FAMAS_25Rnd", "Mag_FAMAS_25Rnd", "Mag_FAMAS_25Rnd", "Mag_FAMAS_25Rnd","ACOGOptic" };
-        array<string> VSSArray = { "VSS", "Mag_VSS_10Rnd", "Mag_VSS_10Rnd", "Mag_VSS_10Rnd", "Mag_VSS_10Rnd", "Mag_VSS_10Rnd","PSO1Optic","Mag_VSS_10Rnd" };
+        array<string> CRSOArray = { "CZ61", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd", "Mag_CZ61_20Rnd","Mag_CZ61_20Rnd","PistolSuppressor" };
         
-        int gunz = Math.RandomInt( 0, 6 );
-        // int gunz = 5;
+        int gunz = Math.RandomInt( 0, 3 );
+        //int gunz = 2;
         if ( gunz == 1 )
         {
-            foreach(int i, string j: FALArray)
+            foreach(int i, string j: UMPArray)
             {
-                itemEnt = player.GetInventory().CreateInInventory( FALArray[i] );
+                itemEnt = player.GetInventory().CreateInInventory( UMPArray[i] );
             }
         }
         else if ( gunz == 2 )
         {
-            foreach(int k, string l: SKSArray)
+            foreach(int k, string l: MPFIVEArray)
             {
-                itemEnt = player.GetInventory().CreateInInventory( SKSArray[k] );
-            }
-        }
-        else if ( gunz == 3 )
-        {
-            foreach(int m, string n: MFOURArray)
-            {
-                itemEnt = player.GetInventory().CreateInInventory( MFOURArray[m] );
-            }
-        }
-        else if ( gunz == 4 )
-        {
-            foreach(int o, string p: VSSArray)
-            {
-                itemEnt = player.GetInventory().CreateInInventory( VSSArray[o] );
-            }
-        }
-        else if ( gunz == 5 )
-        {
-            foreach(int q, string r: UMPArray)
-            {
-                itemEnt = player.GetInventory().CreateInInventory( UMPArray[q] );
+                itemEnt = player.GetInventory().CreateInInventory( MPFIVEArray[k] );
             }
         }
         else 
         {
-            foreach(int a, string b: AKMArray)
+            foreach(int a, string b: CRSOArray)
             {
-                itemEnt = player.GetInventory().CreateInInventory( AKMArray[a] );
-            }        
+                itemEnt = player.GetInventory().CreateInInventory( CRSOArray[a] );
+            }
         }
-
+        
+        
+        
 	}
 };
 
